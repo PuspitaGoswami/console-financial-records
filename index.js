@@ -124,68 +124,15 @@ for(var i = 1; i<finances.length; i++){
    
     changed_value = finances[i][1] - finances[i-1][1];
     
-    if(changed_value < greatest_increase.amount){
+    if(changed_value > greatest_increase.amount){
         greatest_increase.date = finances[i][0];
         greatest_increase.amount = changed_value;
 
     }
-    else if(changed_value >  greatest_decrease.amount){
+    else if(changed_value <  greatest_decrease.amount){
         greatest_increase.date = finances[i][0];
         greatest_decrease.amount = changed_value;
     }
 }
-for(var i = 1; i<finances.length; i++){
-   
-    changed_value = finances[i][1] - finances[i-1][1];
-    
-    if(changed_value < greatest_increase.amount){
-        greatest_increase.date = finances[i][0];
-        greatest_increase.amount = changed_value;
 
-    }
-}
 console.log(greatest_decrease.amount,greatest_increase.amount);
-var maxProfit = 0;
-var maxMonth="";
-var minProfit = 0;
-var minMonth = "";
-var amounts = [];
-var months = [];
-
-var changes = 0;
-
-for(var i=0; i<finances.length-1; i++){
-
-        //total = total+ finances[i][1];
-        changes = finances[i+1][1] -  finances[i][1];
-        if(changes>maxProfit){
-            maxProfit = changes;
-            maxMonth = finances[i][0];
-        }
-        else{
-            minProfit = changes;
-            minMonth = finances[i][0];
-        }
-        amounts.push(changes)
-        months.push(finances[i][0]);
-    
-}
-
-//console.log("The net total amount of Profit/Losses=" + total )
-// console.log(amounts);
-
-console.log("The average of the changes in Profit/Losses over the entire period=" + (total/finances.length) )
-var max = Math.max(...amounts);
-var indexNo = amounts.indexOf(max);
-var indexNoMin = amounts.indexOf(Math.min(...amounts));
-// console.log(months[indexNo], max)
-// console.log(months[indexNoMin], Math.min(...amounts));
-
-const sum = amounts.reduce((accumulator, value) => {
-    return accumulator + value;
-  }, 0);
-  
-//   console.log(sum/86); 
-
-  console.log("increase" + maxMonth + " " + maxProfit);
-  console.log("increase" + minMonth + " " + minProfit);
