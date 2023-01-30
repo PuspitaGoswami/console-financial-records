@@ -135,4 +135,5 @@ for(var i = 1; i<finances.length; i++){
     }
 }
 
-console.log(greatest_decrease.amount,greatest_increase.amount);
+console.log('Greatest Increase in Profit: ' + greatest_increase.date + ' $' + greatest_increase.amount);
+console.log('Greatest Decrease in Profit: ' + greatest_decrease.date + ' $' + greatest_decrease.amount);
