@@ -13,6 +13,9 @@ The greatest increase in profits (date and amount) over the entire period.
 
 The greatest decrease in losses (date and amount) over the entire period. 
 
+### Deployed link
+https://puspitagoswami.github.io/console-financial-records/
+
 
 ## Installation
 
